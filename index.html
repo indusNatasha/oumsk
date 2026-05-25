@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Langot for Men – OUMSK</title>
+  <meta name="description" content="Buy fundoshi (langot) loincloths handmade by OUMSK. Trusted by 1000+ customers worldwide. Experience authentic comfort and tradition.">
+  <meta name="keywords" content="langot, fundoshi, loincloth, handmade underwear, yoga clothing, traditional menswear, oumsk">
+  <meta property="og:title" content="Langot for Men – OUMSK">
+  <meta property="og:description" content="Buy fundoshi (langot) loincloths handmade by OUMSK. Trusted by 1000+ customers worldwide.">
+  <meta property="og:image" content="https://oumsk.com/assets/preview.jpg">
+  <meta property="og:url" content="https://oumsk.com">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+
+
+
+  <body>
+  <div class="background"></div>
+
+  <div class="page-content">
+    <header>
+      <div>
+        <h1>Langot for men</h1>
+        <div class="sub">OUMSK</div>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2>Traditional fundoshi</h2>
+      <div class="cta">
+        <a href="https://en.pinkoi.com/store/oumsk?tag=loincloth">Buy Loincloth</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="stats">
+        <div class="stat"><h3>1053</h3><p>Langots sewn in 3 years</p></div>
+        <div class="stat"><h3>356</h3><p>People wear our langots</p></div>
+        <div class="stat"><h3>28</h3><p>Countries</p></div>
+      </div>
+    </section>
+
+    <section class="section faq">
+      <details>
+        <summary>Benefits of langot</summary>
+        <p>- Supports genitals<br>
+        - Prevents stretching<br>
+        - Reduces stimulation<br>
+        - Aids hormone production<br>
+        - Promotes focus and courage</p>
+      </details>
+      <details>
+        <summary>How to find out your size?</summary>
+        <p>S: &lt;80cm<br>M: 80–99cm<br>L: 100–110cm<br>XL: 111–120cm</p>
+      </details>
+      <details>
+        <summary>Which shape to choose?</summary>
+        <p>Convex: tighter under clothes<br>Rectangular: traditional for yoga</p>
+      </details>
+      <details>
+        <summary>How to wear langot?</summary>
+        <p>See the video below.</p>
+      </details>
+      </section>      
+    </div>
+
+  <section class="section-gallery">
+    <h2 style="text-align: center;">Gallery</h2>
+    <div class="gallery-wrapper">
+      <div class="gallery-scroll">
+        <img src="assets/gallery1.png" alt="Shaped langota made of red cotton">
+        <img src="assets/gallery2.png" alt="Black rectangular cotton langota">
+        <img src="assets/gallery3.png" alt="Shaped langota made of ramie fabric">
+        <img src="assets/gallery4.png" alt="Shaped langota made of hemp fabric">
+        <img src="assets/gallery5.png" alt="Cotton fundoshi">
+        <img src="assets/gallery6.png" alt="Langota made of washed cotton">
+        <img src="assets/gallery7.png" alt="Cotton fundoshi">
+        <img src="assets/gallery8.png" alt="Cotton langota">
+        <img src="assets/gallery9.png" alt="Shaped langota made of nettle fabric">
+        <img src="assets/gallery10.png" alt="Shaped langota made of orange cotton">
+        <img src="assets/gallery1.png" alt="Shaped langota made of red cotton">
+        <img src="assets/gallery2.png" alt="Black rectangular cotton langota">
+        <img src="assets/gallery3.png" alt="Shaped langota made of ramie fabric">
+        <img src="assets/gallery4.png" alt="Shaped langota made of hemp fabric">
+        <img src="assets/gallery5.png" alt="Cotton fundoshi">
+        <img src="assets/gallery6.png" alt="Langota made of washed cotton">
+        <img src="assets/gallery7.png" alt="Cotton fundoshi">
+        <img src="assets/gallery8.png" alt="Cotton langota">
+        <img src="assets/gallery9.png" alt="Shaped langota made of nettle fabric">
+        <img src="assets/gallery10.png" alt="Shaped langota made of orange cotton">         
+      </div>
+    </div>
+  </section>
+
+  <div class="page-content">
+    <section class="section video">
+      <iframe src="https://www.youtube.com/embed/G_6q0bfcuw8" title="How to wear langot" allowfullscreen></iframe>
+    </section>
+
+    <div class="footer">
+      <p>All content © OUMSK. Please do not use without permission.</p>
+      <p>Follow us: <a href="https://t.me/DariaYachmeneva">Telegram</a> | <a href="https://www.instagram.com/_oumsk_/">Instagram</a></p>
+    </div>
+  </div>
+<script>
+  const galleryScroll = document.querySelector('.gallery-scroll');
+  let isHovered = false;
+
+  galleryScroll.addEventListener('mouseenter', () => isHovered = true);
+  galleryScroll.addEventListener('mouseleave', () => isHovered = false);
+
+  window.addEventListener('wheel', function(e) {
+    if (isHovered && e.deltaY !== 0) {
+      e.preventDefault();
+      galleryScroll.scrollLeft += e.deltaY;
+    }
+  }, { passive: false });
+</script>
+
+</body>
+<script>
+  const scrollContainer = document.querySelector('.gallery-scroll');
+  const wrapper = document.querySelector('.gallery-wrapper');
+  const background = document.querySelector('.background');
+  const pages = document.querySelectorAll('.page-content');
+
+  
+  if (scrollContainer.children.length <= 8) {
+    scrollContainer.innerHTML += scrollContainer.innerHTML;
+  }
+
+  
+  function highlightCenterImage() {
+    const imgs = scrollContainer.querySelectorAll('img');
+    const center = scrollContainer.offsetWidth / 2 + scrollContainer.scrollLeft;
+
+    imgs.forEach(img => {
+      const imgCenter = img.offsetLeft + img.offsetWidth / 2;
+      const distance = Math.abs(center - imgCenter);
+      img.classList.toggle('active', distance < img.offsetWidth / 6);
+    });
+  }
+
+  
+  function handleWrapperScale() {
+  const rect = wrapper.getBoundingClientRect();
+    const centerY = window.innerHeight / 2;
+    const distanceY = Math.abs((rect.top + rect.bottom) / 2 - centerY);
+    const threshold = 200;
+
+    const nowInFocus = distanceY < threshold;
+
+    
+    wrapper.classList.toggle('scaled', nowInFocus);
+    wrapper.classList.toggle('dimmed', !nowInFocus);
+    background.classList.toggle('blurred', nowInFocus);
+    pages.forEach(p => p.classList.toggle('blurred', nowInFocus));
+
+   
+    if (nowInFocus && !inFocus) {
+      inFocus = true;
+      playRandomAudio();
+      setTimeout(() => { if (inFocus) fadeVolume(0.25, 2000); }, 300);
+    } else if (!nowInFocus && inFocus) {
+      inFocus = false;
+      fadeVolume(0, 1500);
+    }
+  }
+
+
+  
+  let scrollSpeed = 0.3;
+
+  function loopGalleryScroll() {
+    scrollContainer.scrollLeft += scrollSpeed;
+
+    
+    if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
+      scrollContainer.scrollLeft = 0;
+    }
+
+    highlightCenterImage();
+    requestAnimationFrame(loopGalleryScroll);
+  }
+
+  window.addEventListener('load', () => {
+    highlightCenterImage();
+    handleWrapperScale();
+    requestAnimationFrame(loopGalleryScroll);
+  });
+
+  scrollContainer.addEventListener('scroll', () => {
+    window.requestAnimationFrame(highlightCenterImage);
+  });
+
+  window.addEventListener('scroll', () => {
+    window.requestAnimationFrame(handleWrapperScale);
+  });
+
+  const audioFiles = [
+    'sounds/a-meditation-in-a-japanese-water-garden-11658.mp3',
+    'sounds/bamboo-garden-peace-ii-343215.mp3',
+    'sounds/zen-garden-meditation-147712.mp3'  
+  ];
+
+  let audio = null;
+  let fadeInterval = null;
+  let inFocus = false;
+  
+
+  function fadeVolume(to, duration=2000) {
+    if (!audio) return;
+    clearInterval(fadeInterval);
+    const from = audio.volume;
+    const step = (to - from) / (duration / 100);
+    let current = from;
+    fadeInterval = setInterval(() => {
+      current += step;
+      if ((step > 0 && current >= to) || (step < 0 && current <= to)) {
+        audio.volume = to;
+        clearInterval(fadeInterval);
+      } else audio.volume = Math.max(0, Math.min(1, current));
+    }, 100);
+  }
+
+  function playRandomAudio() {
+    if (audio) { audio.pause(); audio.remove(); }
+    const src = audioFiles[Math.floor(Math.random() * audioFiles.length)];
+    audio = new Audio(src);
+    audio.loop = true;
+    audio.volume = 0;
+    audio.play().catch(() => {});
+  }
+
+
+  
+  window.addEventListener('scroll', () => requestAnimationFrame(handleWrapperScale));
+  window.addEventListener('resize', () => requestAnimationFrame(handleWrapperScale));
+
+  
+  document.body.addEventListener('click', () => {
+    if (audio && audio.paused) audio.play().catch(() => {});
+  }, { once: true });
+</script>
+
+
+</html>

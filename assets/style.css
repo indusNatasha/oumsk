@@ -1,0 +1,182 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: #000;
+      position: relative;
+      overflow-x: hidden;
+      background: none;      
+    }
+
+    .background {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -10;
+      background: url('hero.jpg') center top / cover no-repeat fixed;
+      background-attachment: fixed;
+      background-size: contain;
+      transition: filter 0.4s ease;
+    }
+
+    .background.blurred {
+      filter: blur(5px);
+    }
+
+    header {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0 5%;
+      background: none;
+    }
+    header h1 {
+      font-size: 8vw;
+      font-weight: 300;
+      text-transform: uppercase;
+      text-align: right;
+    }
+    header .sub {
+      font-size: 10vw;
+      font-weight: 600;
+      text-transform: uppercase;
+      text-align: right;
+    }
+
+    .section {
+      padding: 60px 5% 40px; 
+    }
+    
+    .section h2 {
+      font-size: 2rem;
+      font-weight: 300;
+      margin-bottom: 20px;
+      text-align: right;
+    }
+    .cta {
+      text-align: center;
+      margin: 40px 0;
+    }
+    .cta a {
+      padding: 20px 40px;
+      background-color: #efe631;
+      color: #000;
+      text-decoration: none;
+      border-radius: 100px;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      text-align: center;
+      gap: 40px;
+    }
+    .stat {
+      flex: 1 1 200px;
+    }
+    .stat h3 {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .faq {
+      margin-top: 60px;
+    }
+    details {
+      margin-bottom: 20px;
+      border-top: 1px solid #ddd;
+      padding-top: 10px;
+    }
+    summary {
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .video {
+       border: 1px dashed rgba(255, 0, 0, 0);
+      display: flex;
+      justify-content: center;
+      margin-top: 60px;
+    }
+    .video iframe {
+      width: 100%;
+      max-width: 720px;
+      height: 405px;
+      border: none;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 0.9rem;
+      padding: 40px 0;
+    }
+
+    .gallery-wrapper {
+      height: auto; 
+      align-items: center;
+      justify-content: center; /* можно опустить, если только вертикаль важна */
+      transition: transform 0.5s ease, filter 0.5s ease;
+      will-change: transform, filter;
+    }
+
+    .gallery-wrapper.scaled {
+      transform: scale(1);
+      filter: blur(0);
+      opacity: 1;
+    }
+
+    .gallery-wrapper.dimmed {      
+      transform: scale(0.9);
+      filter: blur(3px);
+      opacity: 0.6;
+    }
+    
+
+    .gallery-scroll {
+      display: flex;
+      height: 50vh;
+      align-items: center;
+      overflow-x: auto;      
+      gap: 20px;
+      padding: 20px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .gallery-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .gallery-scroll img {
+      flex: 0 0 auto;
+      width: 220px;
+      height: 30vh; 
+      object-fit: contain;
+      scroll-snap-align: center;
+      transition: transform 1.2s cubic-bezier(0.25, 0.8, 0.25, 1), filter 1.2s ease, opacity 1.2s ease;
+      opacity: 0.7;
+      transform-origin: center;
+    }
+
+    .gallery-scroll img.active {
+      transform: scale(1.8);
+      opacity: 1;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.25));
+    }
+
+    .page-content.blurred {
+      filter: blur(4px);
+      pointer-events: none;
+      transition: filter 0.4s ease;
+    }
+
+    @media (max-width: 600px) {
+      .cta a {
+        font-size: 1rem;
+        padding: 15px 30px;
+      }
+    }
